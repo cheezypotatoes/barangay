@@ -1,178 +1,144 @@
+import shieldImage from "../images/lucide_shield.svg";
+import shieldImageBlue from "../images/lucide_shield_blue.svg";
 import { useForm } from '@inertiajs/react';
 import { Link } from '@inertiajs/react';
 import React from 'react';
 
-export default function Register() {
-    const { data, setData, post, processing, errors } = useForm({
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: '',
-    });
+const Register = () => {
+  const { data, setData, post, processing, errors } = useForm({
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+  });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        if (data.password !== data.password_confirmation) {
-            alert("Passwords do not match!");
-            return;
-        }
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+  
 
-        post('/register');
-    };
+    if (data.password !== data.password_confirmation) {
+      alert("Passwords do not match!");
+      return;
+    }
 
-    return (
-        <section className="bg-gray-50 dark:bg-gray-900">
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                    <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                            Create an account
-                        </h1>
-                        
-                        <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+    post('/register');
+  };
 
+  return (
+    <div className="flex h-screen">
+      <div className="w-1/2 bg-[#1DA1F2] flex justify-start items-start flex-col">
+        <div className="flex justify-start items-center mt-20 ml-10">
+          <img src={shieldImage} alt="Shield" width="100" height="100" />
+          <h1 className="text-3xl text-white font-bold">LOCALPULSE</h1>
+        </div>
 
-                        <div>
-                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Name
-                                </label>
-                                <input
-                                    className={`bg-gray-50 border ${
-                                        errors.name ? 'border-red-500' : 'border-gray-300'
-                                    } text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-                                    type="name"
-                                    id="name"
-                                    value={data.name}
-                                    onChange={(e) => setData('name', e.target.value)}
-                                    autoComplete="name"
-                                    required
-                                />
-                                {errors.name && (
-                                    <p className="text-red-500 text-xs mt-1">{errors.name}</p>
-                                )}
-                            </div>
+        <div className="flex justify-start items-center mt-5 ml-10 flex-col">
+          <h1 className="text-4xl text-white font-bold">
+            Welcome to LocalPulse a <br />
+            Local Government <br />
+            Profiling System
+          </h1>
+          <br />
+          <p className="text-1xl text-white text-opacity-80">
+            Access the barangay’s services, manage resident <br />
+            information, and track community affairs all in one secure <br />
+            platform.
+          </p>
+        </div>
+      </div>
 
+      <div className="w-1/2 bg-white flex justify-start items-center flex-col">
+        <div className="flex justify-center items-center mt-12 flex-col">
+          <img src={shieldImageBlue} alt="Shield" width="80" height="80" />
+          <h1 className="text-4xl text-black font-bold">
+            Sign in to your account
+          </h1>
+          <p className="text-1xl text-gray-400 font-bold">
+            Enter your credentials to access the portal
+          </p>
+        </div>
 
+        <div className="flex justify-center items-center mt-4 flex-col">
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-800 mt-4">
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              value={data.name}
+              onChange={(e) => setData('name', e.target.value)}
+              className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your name"
+              style={{ width: '29vw' }}
+              required
+            />
 
-                            <div>
-                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Your email
-                                </label>
-                                <input
-                                    className={`bg-gray-50 border ${
-                                        errors.email ? 'border-red-500' : 'border-gray-300'
-                                    } text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-                                    type="email"
-                                    id="email"
-                                    value={data.email}
-                                    placeholder="example@domain.com"
-                                    onChange={(e) => setData('email', e.target.value)}
-                                    autoComplete="email"
-                                    required
-                                />
-                                {errors.email && (
-                                    <p className="text-red-500 text-xs mt-1">{errors.email}</p>
-                                )}
-                            </div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-800 mt-4">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={data.email}
+              onChange={(e) => setData('email', e.target.value)}
+              className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your email"
+              style={{ width: '29vw' }}
+              required
+            />
 
+            <label htmlFor="password" className="block text-sm font-medium text-gray-800 mt-4">
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value={data.password}
+              onChange={(e) => setData('password', e.target.value)}
+              className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your password"
+              style={{ width: '29vw' }}
+              required
+            />
 
+            <label htmlFor="password_confirmation" className="block text-sm font-medium text-gray-800 mt-4">
+              Confirm Password
+            </label>
+            <input
+              id="password_confirmation"
+              name="password_confirmation"
+              type="password"
+              value={data.password_confirmation}
+              onChange={(e) => setData('password_confirmation', e.target.value)}
+              className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              placeholder="Confirm your password"
+              style={{ width: '29vw' }}
+              required
+            />
 
-                            <div>
-                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Password
-                                </label>
-                                <input
-                                    className={`bg-gray-50 border ${
-                                        errors.password ? 'border-red-500' : 'border-gray-300'
-                                    } text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-                                    type="password"
-                                    id="password"
-                                    value={data.password}
-                                    onChange={(e) => setData('password', e.target.value)}
-                                    autoComplete="new-password"
-                                    required
-                                />
-                                {errors.password && (
-                                    <p className="text-red-500 text-xs mt-1">{errors.password}</p>
-                                )}
-                            </div>
+            <button
+              type="submit"
+              disabled={processing}
+              className="mt-2 p-2 w-full border bg-blue-500 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 flex items-center justify-center text-center"
+            >
+              <h1 className="text-1xl text-white font-bold">
+                {processing ? 'Signing up...' : 'Sign up'}
+              </h1>
+            </button>
 
-
-
-                            <div>
-                                <label htmlFor="password_confirmation" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Confirm password
-                                </label>
-                                <input
-                                    className={`bg-gray-50 border ${
-                                        errors.password_confirmation ? 'border-red-500' : 'border-gray-300'
-                                    } text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-                                    type="password"
-                                    id="password_confirmation"
-                                    value={data.password_confirmation}
-                                    onChange={(e) => setData('password_confirmation', e.target.value)}
-                                    autoComplete="new-password"
-                                    required
-                                />
-                                {errors.password_confirmation && (
-                                    <p className="text-red-500 text-xs mt-1">{errors.password_confirmation}</p>
-                                )}
-                            </div>
-
-
-
-                            <div className="flex items-start">
-                                <div className="flex items-center h-5">
-                                    <input
-                                        id="terms"
-                                        type="checkbox"
-                                        checked={data.terms}
-                                        onChange={(e) => setData('terms', e.target.checked)}
-                                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                                        required
-                                    />
-                                </div>
-                                <div className="ml-3 text-sm">
-                                    <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">
-                                        I accept the{' '}
-                                        <a className="font-medium text-blue-600 hover:underline" href="#">
-                                            Terms and Conditions
-                                        </a>
-                                    </label>
-                                    {errors.terms && (
-                                        <p className="text-red-500 text-xs mt-1">{errors.terms}</p>
-                                    )}
-                                </div>
-                            </div>
-
-
-
-                            <button
-                                type="submit"
-                                disabled={processing}
-                                className={`w-full text-white ${
-                                    processing ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
-                                } focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
-                            >
-                                {processing ? 'Processing...' : 'Create an account'}
-                            </button>
-
-
-
-                            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Already have an account?{' '}
-                                <Link href={route('login')} className="font-medium text-blue-600 hover:underline">
-                                    Login here
-                                </Link>
-                            </p>
-
-
-                        </form>
-                    </div>
-                </div>
+            <div className="flex mt-1 text-center justify-start">
+              <h1 className="text-0xl"><a href="/">Log in</a></h1>
             </div>
-        </section>
-    );
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 };
+
+export default Register;

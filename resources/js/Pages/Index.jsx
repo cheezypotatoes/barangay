@@ -53,7 +53,7 @@ const Index = () => {
         <div className="flex justify-center items-center mt-12 flex-col" >
           <form onSubmit={handleSubmit}>
             <label htmlFor="email" className="block text-sm font-medium text-gray-800 ">
-              Username
+              Email
             </label>
             <input
               id="email"
@@ -93,7 +93,7 @@ const Index = () => {
             </button>
 
             <div className="flex mt-1 text-center justify-start">
-              <h1 className="text-0xl">Sign in</h1>
+              <h1 className="text-0xl"><a href="/register">Sign in</a></h1>
             </div>
           </form>
         </div>
