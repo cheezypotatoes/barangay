@@ -10,6 +10,7 @@ use App\Http\Controllers\RegisterResidentController;
 use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\OrganizationManagerController;
 use App\Http\Controllers\JoinOrganizationController;
+use App\Http\Controllers\FileCaseController;
 
 use Inertia\Inertia;
 
@@ -66,6 +67,10 @@ Route::get('/JoinOrganization', [JoinOrganizationController::class, 'show']
 
 Route::post('/JoinOrganization', [JoinOrganizationController::class, 'join']
 )->name('JoinOrganization');
+
+
+Route::get('/FileCase', [FileCaseController::class, 'show']
+)->name('FileCase');
 
 
 

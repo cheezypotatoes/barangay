@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterResidentController;
 use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\OrganizationManagerController;
 use App\Http\Controllers\JoinOrganizationController;
+use App\Http\Controllers\FileCaseController;
 use Inertia\Inertia;
 
 
@@ -58,6 +59,11 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/JoinOrganization', [JoinOrganizationController::class, 'join']
     )->name('JoinOrganization');
+
+    
+    Route::get('/FileCase', [FileCaseController::class, 'show']
+    )->name('FileCase');
+
 
     Route::get('/logout', function () {
         Auth::logout();

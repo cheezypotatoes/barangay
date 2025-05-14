@@ -19,6 +19,8 @@ export default function Dashboard() {
                 <a href="/"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Home</li></a>
                 <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Show Residents</li>
 
+
+
                 {alreadyRegistered ? (
                     <a href="/editProfile">
                         <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
@@ -33,6 +35,9 @@ export default function Dashboard() {
                     </a>
                 )}
 
+                 <a href="/JoinOrganization"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Join Organization</li></a>
+                <a href="/FileCase"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">File a Barangay Complaint Meeting</li></a>
+                
                 {isAdmin && (
                     <a href="/organizationManager">
                         <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">

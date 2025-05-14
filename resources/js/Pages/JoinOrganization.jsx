@@ -3,6 +3,7 @@ import { usePage, useForm } from '@inertiajs/react';
 
 export default function JoinOrganization() {
     const [selectedOrg, setSelectedOrg] = useState("");
+    const [warning, setWarning] = useState("");
     const { data, setData, post, processing, errors, reset } = useForm({
             organizationSelected: '',
     });
@@ -23,6 +24,7 @@ export default function JoinOrganization() {
                 },
                 onError: (errors) => {
                     console.log(errors);
+                    setWarning("You already requested this organization.")
                 },
             });
         }
@@ -34,7 +36,7 @@ export default function JoinOrganization() {
             <h2 className="text-xl font-semibold text-gray-800">Pick an Organization</h2>
             <select
             value={selectedOrg}
-            onChange={(e) => setSelectedOrg(e.target.value)}
+            onChange={(e) => {setSelectedOrg(e.target.value), setWarning("")}}
             className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
             <option value="">-- Select --</option>
@@ -51,12 +53,20 @@ export default function JoinOrganization() {
             >
             Confirm
             </button>
+            
+            {selectedOrg && (
+                <p className="text-red-700">
+                    {warning}
+                </p>
+            )}
 
             {selectedOrg && (
             <p className="text-gray-700">
                 ✅ You picked: <strong>{selectedOrg}</strong>
             </p>
             )}
+
+            
         </div>
 
         
