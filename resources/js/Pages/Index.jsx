@@ -1,73 +1,89 @@
-import MagnifyingGlass from "../images/MagnifyingGlass.svg"
-import BackgroundImage from "../images/IndexBackground6.jpg";
+import shieldImage from "../images/lucide_shield.svg"
+import shieldImageBlue from "../images/lucide_shield_blue.svg"
 
 const Index = () => {
   return (
-    <div 
-    className="flex flex-col items-center justify-start h-screen w-screen bg-cover bg-center">
-      <div className="flex flex-row w-screen border-0.5 border-gray-600  h-20">
-          <div className="flex flex-col items-end px-8 justify-center w-1/5 border-r-4 border-y-[3px] border-[#3b4d5c]">
-            <h1 className="font-roboto text-2xl font-semibold text-[#1a2e3b] tracking-tight">
-              LOCALPULSE
+   <div className="flex h-screen">
+      <div className="w-1/2 bg-[#1DA1F2] flex justify-start items-start flex-col">
+
+
+          <div className="flex justify-start items-center mt-20 ml-10" >
+            <img src={shieldImage} alt="Shield" width="100" height="100" />
+            <h1 className="text-3xl text-white font-bold">LOCALPULSE</h1>
+          </div>
+
+          <div className="flex justify-start items-center mt-5 ml-10 flex-col" >
+            <h1 className="text-4xl text-white font-bold">
+              Welcome to LocalPulse a <br />
+              Local Government  <br />
+              Profiling System
             </h1>
+            <br></br>
+            <p className="text-1xl text-white text-opacity-80">
+              Access the barangay’s services, manage resident <br />
+              information, and track community affairs all in one secure <br />
+              platform.
+            </p>
           </div>
 
-          <div className="flex flex-col items-end px-10 justify-center w-4/5 border-y-[3px] border-[#3b4d5c] ml-auto"> 
-            <div className="flex space-x-8 ">
-              <a href="#home" className="text-[#1a2e3b] font-semibold text-lg hover:text-[#3b4d5c]">Home</a>
-              <a href="#about" className="text-[#1a2e3b] font-semibold text-lg hover:text-[#3b4d5c]">About</a>
-              <a href="#contact" className="text-[#1a2e3b] font-semibold text-lg hover:text-[#3b4d5c]">Contact</a>
-            </div>
-          </div>
-      </div>
-      <div 
-        className="flex flex-col items-center justify-center w-screen h-[100vh] bg-cover bg-[position:center_88%]  bg-neutral-900"
-        style={{ backgroundImage: `url(${BackgroundImage})` }}>
+      </div> 
+
+
+      <div className="w-1/2 bg-white flex justify-start items-center flex-col">
       
-        <div className="flex flex-row items-center justify-center w-full h-full">
-            <div className="flex flex-col justify-center items-center w-[40%] h-full bg-opacity-50 ">
+          <div className="flex justify-center items-center mt-12 flex-col" >
+            <img src={shieldImageBlue} alt="Shield" width="80" height="80" />
+            <h1 className="text-4xl text-black font-bold">
+                Sign in  to your account
+            </h1>
+            <p className="text-1xl text-gray-400 font-bold">
+                Enter your credentials to access the portal
+            </p>
+          </div>
 
-            
-              <div className="flex flex-col items-center justify-start w-[90%] h-[90%] mr-16">
-                {/* Welcome Text */}
-                <div className="flex flex-col items-center justify-center w-[80%] h-[30%] mt-40">
-                  <h1 className="text-6xl font-bold text-gray-900 font-roboto drop-shadow-lg">
-                    LocalPulse
-                  </h1>
-                  <p className="text-sm text-gray-900 mr-4">
-                  Davao's trusted platform for barangay profiling.
-                </p>
-                </div>
+          <div className="flex justify-center items-center mt-12 flex-col" >
+            <form>
+                <label htmlFor="username" className="block text-sm font-medium text-gray-800 ">
+                  Username
+                </label>
+                <input
+                  id="username"
+                  type="text"
+                  className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your username"
+                  style={{ width: '29vw' }}
+                  required
+                />
 
                 
-                <a href="/login" className="flex border-2 border-black items-center justify-center w-[60%] h-[6vh] bg-gray-900 bg-opacity-80 rounded-lg cursor-pointer hover:bg-gray-800 transition duration-300 shadow-md hover:shadow-lg">
-                  <div>
-                    <h1 className="text-xl font-semibold text-white font-roboto">
-                      Get Started
-                    </h1>
-                  </div>
-                </a>
+                <label htmlFor="username" className="block text-sm font-medium text-gray-800 mt-4">
+                  Password
+                </label>
+                <input
+                  id="username"
+                  type="text"
+                  className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your username"
+                  style={{ width: '29vw' }}
+                  required
+                />
 
-              </div>
-             
-              
+                <div 
+                  className="mt-2 p-2 w-full border bg-blue-500 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 flex items-center justify-center text-center">
+                  <h1 className="text-1xl text-white font-bold">
+                    Sign in
+                  </h1>
+                </div>
 
+                <div className="flex mt-1 text-center justify-start">
+                  <h1 className="text-0xl">Sign in</h1>
 
-            </div>
-
-
-
-
-            <div className="flex flex-col items-center w-[60%] h-full">
-
-            </div>
-
-        </div>
-      </div>
-
+                </div>
+                
+            </form>
+          </div>
       
-
-
+      </div>
     </div>
   );
 };
