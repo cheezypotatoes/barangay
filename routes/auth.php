@@ -20,6 +20,12 @@ Route::middleware('guest')->group(function () {
 
     Route::post('/login', [LoginController::class, 'login'])->name('login');
 
+     Route::get('/login', function () {
+        return Inertia::render('Index');
+    })->name('Login');
+    
+
+
     Route::get('/register', function () {
         return Inertia::render('Register');
     })->name('register');

@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    
+    public function show()
+    {
+        return inertia('Index');
+    }
+
+
+
     //
     public function Login(LoginRequest $request) {
 
