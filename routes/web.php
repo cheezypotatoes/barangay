@@ -15,6 +15,8 @@ use App\Http\Controllers\FileCaseRequestController;
 use App\Http\Controllers\CheckComplaintsController;
 use App\Http\Controllers\ViewComplaintController;
 use App\Http\Controllers\ShowResidentsController;
+use App\Http\Controllers\CedulaPaymentController;
+use App\Http\Controllers\PayCedulaFormController;
 
 use Inertia\Inertia;
 
@@ -89,9 +91,17 @@ Route::get('/viewComplaint', [ViewComplaintController::class, 'show']
 )->name('ViewComplaint');
 
 
-
 Route::get('/viewResidents', [ShowResidentsController::class, 'show']
 )->name('viewResidents');
+
+Route::get('/CedulaPayment', [CedulaPaymentController::class, 'show']
+)->name('CedulaPayment');
+
+Route::get('/CedulaPaymentForm', [PayCedulaFormController::class, 'show']
+)->name('CedulaPaymentForm');
+
+Route::post('/CedulaPaymentForm', [PayCedulaFormController::class, 'pay']
+)->name('CedulaPaymentForm');
 
 
 

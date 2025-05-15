@@ -86,12 +86,26 @@ export default function Dashboard() {
                     <div className="mt-4 text-3xl font-bold">{residentsCount}</div>
                 </div>
 
-                {/* Card 3: Active Services */}
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h4 className="text-xl font-semibold mb-4">Active Services</h4>
-                    <p className="text-gray-700">Available services for residents.</p>
-                    <div className="mt-4 text-3xl font-bold">None</div>
+                {/* Card 3: Cedula */}
+               
+                <div
+                    className="bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 p-6 rounded-xl shadow-lg cursor-pointer transition-transform transform hover:scale-105 hover:shadow-2xl"
+                    >
+                    <h4 className="text-2xl font-extrabold text-white mb-3 drop-shadow-md">
+                        Pay Cedula
+                    </h4>
+                    <p className="text-indigo-100 mb-6">
+                        Make your cedula payment quickly and securely.
+                    </p>
+                    <a href="/CedulaPayment">
+                        <button
+                            className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition"
+                        >
+                            Pay Now
+                        </button>
+                    </a>
                 </div>
+              
             </div>
 
             {/* Additional Information */}
