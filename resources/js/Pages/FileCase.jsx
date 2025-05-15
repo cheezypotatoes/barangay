@@ -11,7 +11,6 @@ export default function BarangayComplaintInbox() {
     if (filter === 'all') return true;
     if (filter === 'pending') return complaint.status.toLowerCase() === 'pending';
     if (filter === 'resolved') return complaint.status.toLowerCase() === 'resolved';
-    if (filter === 'on_going') return complaint.status.toLowerCase() === 'on_going';
     return true;
   });
 
@@ -51,14 +50,7 @@ export default function BarangayComplaintInbox() {
             >
               Resolved
             </div>
-            <div
-              className={`px-4 py-2 rounded cursor-pointer hover:bg-gray-700 transition ${
-                filter === 'on_going' ? 'bg-gray-800 font-semibold' : ''
-              }`}
-              onClick={() => setFilter('on_going')}
-            >
-              On Going
-            </div>
+            
             <a href="/dashboard">
               <div className="px-4 py-2 rounded cursor-pointer hover:bg-gray-700 transition">
                 Return
