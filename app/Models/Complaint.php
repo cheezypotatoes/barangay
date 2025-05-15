@@ -8,11 +8,12 @@ class Complaint extends Model
 {
     protected $fillable = [
         'category_id',
+        'resident_id',
         'message',
         'schedule_date',
         'status',
     ];
-    
+
     public function category()
     {
         return $this->belongsTo(ComplaintCategory::class);

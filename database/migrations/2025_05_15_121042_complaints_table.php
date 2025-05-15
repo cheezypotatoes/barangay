@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('resident_id');
             $table->string('message');
             $table->date('schedule_date')->nullable();
             $table->string('status')->default('pending');
@@ -22,7 +23,11 @@ return new class extends Migration
 
             $table->foreign('category_id')
                 ->references('id')
-                ->on('complaint_categories')
+                ->on('complaint_categories');
+
+            $table->foreign('resident_id')
+                ->references('id')
+                ->on('residents')
                 ->onDelete('cascade');
         });
     }

@@ -45,7 +45,7 @@ export default function BarangayComplaintInbox() {
 
           {/* Message List */}
           <section className="flex-1 overflow-auto bg-gray-50 p-6">
-            {[1, 2, 3].map((_, idx) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((_, idx) => (
 
               <div
                 key={idx}
