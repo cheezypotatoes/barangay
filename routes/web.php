@@ -22,11 +22,6 @@ Route::get('/', function () {
 })->name('Index');
 
 
-Route::get('/login', function () {
-    return Inertia::render('Login');
-})->name('login');
-
-
 Route::post('/login', [LoginController::class, 'login']
 )->name('login');
 

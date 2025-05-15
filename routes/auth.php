@@ -18,10 +18,6 @@ Route::middleware('guest')->group(function () {
         return Inertia::render('Index');
     })->name('Index');
 
-    Route::get('/login', function () {
-        return Inertia::render('Login');
-    })->name('login');
-
     Route::post('/login', [LoginController::class, 'login'])->name('login');
 
     Route::get('/register', function () {
