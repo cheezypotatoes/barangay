@@ -39,11 +39,18 @@ export default function Dashboard() {
                 <a href="/FileCase"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">File a Barangay Complaint Meeting</li></a>
                 
                 {isAdmin && (
-                    <a href="/organizationManager">
-                        <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
-                            Organization Manager
-                        </li>
-                    </a>
+                    <>
+                        <a href="/organizationManager">
+                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                                Organization Manager
+                            </li>
+                        </a>
+                        <a href="/checkComplaints">
+                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                                View Complaints
+                            </li>
+                        </a>
+                    </>  
                 )}
 
                 <a href="/logout"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Logout</li></a>

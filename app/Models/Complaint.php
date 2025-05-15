@@ -18,4 +18,9 @@ class Complaint extends Model
     {
         return $this->belongsTo(ComplaintCategory::class);
     }
+
+    public function resident()
+    {
+        return $this->belongsTo(\App\Models\Residents::class, 'resident_id');
+    }
 }

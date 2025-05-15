@@ -11,6 +11,7 @@ use App\Http\Controllers\OrganizationManagerController;
 use App\Http\Controllers\JoinOrganizationController;
 use App\Http\Controllers\FileCaseController;
 use App\Http\Controllers\FileCaseRequestController;
+use App\Http\Controllers\CheckComplaintsController;
 use Inertia\Inertia;
 
 
@@ -74,6 +75,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/FileCaseRequest', [FileCaseRequestController::class, 'submit']
     )->name('FileCaseRequest');
 
+    Route::get('/checkComplaints', [CheckComplaintsController::class, 'show']
+    )->name('checkComplaints');
+
 
 
     Route::get('/logout', function () {
@@ -81,6 +85,11 @@ Route::middleware('auth')->group(function () {
         return redirect('/');
     });
     
+    
+
+    Route::post('/checkComplaints', [CheckComplaintsController::class, 'changeData']
+    )->name('checkComplaints');
+
 
 
 });

@@ -28,5 +28,7 @@ class Residents extends Model
         
     ];
 
+  
+
     
 }
