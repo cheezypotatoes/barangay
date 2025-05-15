@@ -17,8 +17,9 @@ export default function Dashboard() {
             <h2 className="text-2xl font-semibold mb-6">Barangay Profiling</h2>
             <ul>
                 <a href="/"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Home</li></a>
-                <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Show Residents</li>
+               
 
+                
 
 
                 {alreadyRegistered ? (
@@ -40,6 +41,11 @@ export default function Dashboard() {
                 
                 {isAdmin && (
                     <>
+                        <a href="/viewResidents">
+                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                            Show Residents
+                            </li>
+                        </a>
                         <a href="/organizationManager">
                             <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
                                 Organization Manager

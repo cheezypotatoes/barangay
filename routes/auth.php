@@ -13,6 +13,8 @@ use App\Http\Controllers\FileCaseController;
 use App\Http\Controllers\FileCaseRequestController;
 use App\Http\Controllers\CheckComplaintsController;
 use App\Http\Controllers\ViewComplaintController;
+use App\Http\Controllers\ShowResidentsController;
+
 use Inertia\Inertia;
 
 
@@ -90,6 +92,10 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/viewComplaint', [ViewComplaintController::class, 'show']
     )->name('ViewComplaint');
+
+
+    Route::get('/viewResidents', [ShowResidentsController::class, 'show']
+    )->name('viewResidents');
 
 
 
