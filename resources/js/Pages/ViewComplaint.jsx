@@ -2,7 +2,6 @@ import React from 'react';
 import { usePage } from '@inertiajs/react';
 
 export default function ComplaintView() {
-  // Access the Inertia page props
   const { complaint } = usePage().props;
 
   if (!complaint) {
