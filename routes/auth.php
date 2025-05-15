@@ -10,6 +10,7 @@ use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\OrganizationManagerController;
 use App\Http\Controllers\JoinOrganizationController;
 use App\Http\Controllers\FileCaseController;
+use App\Http\Controllers\FileCaseRequestController;
 use Inertia\Inertia;
 
 
@@ -65,6 +66,11 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/FileCase', [FileCaseController::class, 'show']
     )->name('FileCase');
+
+    
+    Route::get('/FileCaseRequest', [FileCaseRequestController::class, 'show']
+    )->name('FileCaseRequest');
+
 
 
     Route::get('/logout', function () {

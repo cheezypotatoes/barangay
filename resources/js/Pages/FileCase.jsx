@@ -38,7 +38,7 @@ export default function BarangayComplaintInbox() {
                 <h1 className="text-2xl font-semibold text-gray-800">Inbox</h1>
                 <button
                 className="bg-blue-600 text-white px-4 py-2 rounded"
-                    onClick={() => router.visit('/dashboard')}
+                    onClick={() => router.visit('/FileCaseRequest')}
                 >New Complaint
                 </button>
           </header>
@@ -53,11 +53,15 @@ export default function BarangayComplaintInbox() {
               >
                 {/* Subject */}
                 <div className="h-6 bg-gray-300 rounded w-1/3 mb-2 flex items-center px-2">
-                    <h1 className="text-sm font-semibold mr-2">Category</h1>
+                    <h1 className="text-sm font-semibold mr-2">Category:</h1>
                     <h1 className="text-sm" >Public disturbance</h1>
                 </div> 
 
-                <div className="h-4 bg-gray-300 rounded w-4/5 mb-2"></div> {/* Preview */}
+                {/* Preview */}
+                <div className="h-5 bg-gray-300 rounded w-4/5 mb-2 flex items-center px-2">
+                  <h1 className="text-sm font-semibold mr-2">Preview</h1>
+                  <h1 className="text-sm" >Lorem ipsum dolor sit amet consectetur</h1>
+                </div>
 
                 {/* Date placeholder */}
                 <div className="h-5 bg-gray-300 rounded w-1/4 flex items-center px-2">

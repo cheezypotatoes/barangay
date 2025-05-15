@@ -9,11 +9,7 @@ class FileCaseController extends Controller
 {
     //
     public function show()
-    {
-        $allComplaintNames = ComplaintCategory::pluck('complaint_category_name');
-        
-        return Inertia::render('FileCase', [
-            'allComplaintNames' => $allComplaintNames
-        ]);
+    {        
+        return Inertia::render('FileCase', []);
     }
 }
