@@ -56,6 +56,11 @@ export default function Dashboard() {
                                 View Complaints
                             </li>
                         </a>
+                        <a href="/ConfirmCedulaPayment">
+                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                                Confirm Cedula
+                            </li>
+                        </a>
                     </>  
                 )}
 

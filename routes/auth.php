@@ -16,6 +16,7 @@ use App\Http\Controllers\ViewComplaintController;
 use App\Http\Controllers\ShowResidentsController;
 use App\Http\Controllers\CedulaPaymentController;
 use App\Http\Controllers\PayCedulaFormController;
+use App\Http\Controllers\ConfirmCedulaPaymentController;
 
 
 use Inertia\Inertia;
@@ -109,6 +110,9 @@ Route::middleware('auth')->group(function () {
     
     Route::post('/CedulaPaymentForm', [PayCedulaFormController::class, 'pay']
     )->name('CedulaPaymentForm');
+
+     Route::get('/ConfirmCedulaPayment', [ConfirmCedulaPaymentController::class, 'show']
+    )->name('ConfirmCedulaPayment');
 
 
 
