@@ -10,4 +10,9 @@ class ComplaintCategory extends Model
     /** @use HasFactory<\Database\Factories\ComplaintCategoryFactory> */
     use HasFactory;
     protected $fillable = ['complaint_category_name'];
+
+     public function complaints()
+    {
+        return $this->hasMany(Complaint::class, 'category_id');
+    }
 }
