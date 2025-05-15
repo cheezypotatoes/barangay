@@ -71,6 +71,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/FileCaseRequest', [FileCaseRequestController::class, 'show']
     )->name('FileCaseRequest');
 
+    Route::post('/FileCaseRequest', [FileCaseRequestController::class, 'submit']
+    )->name('FileCaseRequest');
+
 
 
     Route::get('/logout', function () {
