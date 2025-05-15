@@ -13,6 +13,7 @@ use App\Http\Controllers\JoinOrganizationController;
 use App\Http\Controllers\FileCaseController;
 use App\Http\Controllers\FileCaseRequestController;
 use App\Http\Controllers\CheckComplaintsController;
+use App\Http\Controllers\ViewComplaintController;
 
 use Inertia\Inertia;
 
@@ -79,9 +80,12 @@ Route::post('/FileCaseRequest', [FileCaseRequestController::class, 'submit']
 Route::get('/checkComplaints', [CheckComplaintsController::class, 'show']
 )->name('checkComplaints');
 
-
-Route::post('/checkComplaints', [CheckComplaintsController::class, 'changeData']
+Route::get('/checkComplaints', [CheckComplaintsController::class, 'show']
 )->name('checkComplaints');
+
+
+Route::get('/viewComplaint', [ViewComplaintController::class, 'show']
+)->name('ViewComplaint');
 
 
 

@@ -6,6 +6,14 @@ export default function BarangayComplaintInbox() {
 
   const [filter, setFilter] = useState('all');
 
+  const viewMessage = (id) => {
+    console.log(id)
+    router.get('/viewComplaint', {
+          id: id,
+          
+    })
+  }
+
 
   const filteredComplaints = complaints.filter((complaint) => {
     if (filter === 'all') return true;
@@ -83,7 +91,10 @@ export default function BarangayComplaintInbox() {
               filteredComplaints.map((complaint) => (
                 <div
                   key={complaint.id}
-                  className="mb-5 p-4 border border-gray-300 rounded-lg bg-white"
+                  className="mb-5 p-4 border border-gray-300 rounded-lg bg-white 
+                  hover:border-blue-500 hover:shadow-lg transition 
+                  duration-300 ease-in-out cursor-pointer"
+                  onClick={() => {viewMessage(complaint.id)}}
                 >
                   {/* Category */}
                   <div className="h-6 rounded w-1/3 mb-2 flex items-center px-2">
