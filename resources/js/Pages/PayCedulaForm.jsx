@@ -16,7 +16,7 @@ export default function PayCedulaForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-indigo-100 to-blue-50 p-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr bg-[#1DA1F2] p-6">
       <form
         onSubmit={handleSubmit}
         className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md"
@@ -30,7 +30,7 @@ export default function PayCedulaForm() {
           <label className="block text-gray-700 text-sm font-medium mb-1">
             Send to GCash Number
           </label>
-          <div className="bg-gray-100 p-3 rounded-lg text-center font-mono text-lg text-blue-600">
+          <div className="bg-gray-100 p-3 rounded-lg text-center font-mono text-lg text-[#1DA1F2]">
             {gcashNumber}
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function PayCedulaForm() {
         <button
           type="submit"
           disabled={processing}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-full font-semibold transition duration-150"
+          className="w-full bg-[#1DA1F2] hover:bg-blue-700 text-white py-3 rounded-full font-semibold transition duration-150"
         >
           {processing ? "Submitting..." : "Confirm Payment"}
         </button>
