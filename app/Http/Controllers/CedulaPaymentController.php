@@ -39,11 +39,13 @@ class CedulaPaymentController extends Controller
                               ->sum('payment');
         $pension = $resident->pension;
 
-        
+        $allPayments = CedulaPayment::where('resident_id', $resident->id)->get();
+
 
         return Inertia::render('PayCedula', [
             'totalPayments' => $totalPayments,
             'pension' => $pension,
+            'payments' => $allPayments,
         ]);
     }
 }
