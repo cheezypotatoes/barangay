@@ -15,7 +15,7 @@ class PayCedulaFormController extends Controller
 
 
     public function pay(Request $request) {
-            $request->validate([
+        $request->validate([
             'referralCode' => 'nullable|string|max:255',
             'amount' => 'required|numeric|min:1',
         ]);
