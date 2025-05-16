@@ -26,4 +26,9 @@ class CedulaPayment extends Model
     {
         return $this->belongsTo(Residents::class);
     }
+
+    public function cedulaPayments()
+    {
+        return $this->hasMany(CedulaPayment::class);
+    }
 }

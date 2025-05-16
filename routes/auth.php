@@ -114,6 +114,11 @@ Route::middleware('auth')->group(function () {
      Route::get('/ConfirmCedulaPayment', [ConfirmCedulaPaymentController::class, 'show']
     )->name('ConfirmCedulaPayment');
 
+    Route::post('/ConfirmCedulaPayment', [ConfirmCedulaPaymentController::class, 'changePaymentStatus']
+)->name('ConfirmCedulaPayment');
+
+
+
 
 
 
