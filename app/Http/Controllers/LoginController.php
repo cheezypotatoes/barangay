@@ -29,7 +29,7 @@ class LoginController extends Controller
             return redirect()->intended(default: '/dashboard');
         }
 
-        return back()->withErrors(['password' => 'Invalid credentials. Please try again.']);
+        return back()->withErrors(provider: ['error' => 'Invalid credentials. Please try again.']);
 
     }
 }
