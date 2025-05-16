@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Organizations;
+use App\Models\Residents;
 
 class JoinOrganizationController extends Controller
 {
     //
     public function show()
     {
+        $UserData = Residents::where('user_id', auth()->id())->get()->toArray();
+        
+        if (count($UserData) == 0){
+            return redirect('/registerAsResident');
+        }
         return inertia('JoinOrganization');
     }
 
