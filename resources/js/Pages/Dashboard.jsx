@@ -14,57 +14,52 @@ export default function Dashboard() {
         <div className="flex h-screen">
         {/* Sidebar */}
         <div className="w-64 dark:bg-gray-800 text-white p-6">
-            <h2 className="text-2xl font-semibold mb-6">Barangay Profiling</h2>
+            <h2 className="text-2xl font-bold mb-6">Barangay Profiling</h2>
             <ul>
-                <a href="/"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Home</li></a>
                
-
-                
-
-
                 {alreadyRegistered ? (
                     <a href="/editProfile">
-                        <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                        <li className="py-2 hover:bg-blue-800 rounded cursor-pointer font-bold">
                         Edit Profile
                         </li>
                     </a>
                     ) : (
                     <a href="/registerAsResident">
-                        <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                        <li className="py-2 hover:bg-blue-800 rounded cursor-pointer font-bold">
                         Register As Resident
                         </li>
                     </a>
                 )}
 
-                 <a href="/JoinOrganization"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Join Organization</li></a>
-                <a href="/FileCase"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">File a Barangay Complaint Meeting</li></a>
+                 <a href="/JoinOrganization"><li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">Join Organization</li></a>
+                <a href="/FileCase"><li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">File a Barangay Complaint Meeting</li></a>
                 
                 {isAdmin && (
                     <>
                         <a href="/viewResidents">
-                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                            <li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">
                             Show Residents
                             </li>
                         </a>
                         <a href="/organizationManager">
-                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                            <li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">
                                 Organization Manager
                             </li>
                         </a>
                         <a href="/checkComplaints">
-                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                            <li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">
                                 View Complaints
                             </li>
                         </a>
                         <a href="/ConfirmCedulaPayment">
-                            <li className="py-2 hover:bg-blue-800 rounded cursor-pointer">
+                            <li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">
                                 Confirm Cedula
                             </li>
                         </a>
                     </>  
                 )}
 
-                <a href="/logout"><li className="py-2 hover:bg-blue-800 rounded cursor-pointer">Logout</li></a>
+                <a href="/logout"><li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">Logout</li></a>
             </ul>
         </div>
 
@@ -94,21 +89,21 @@ export default function Dashboard() {
                 {/* Card 3: Cedula */}
                
                 <div
-                    className="bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 p-6 rounded-xl shadow-lg cursor-pointer transition-transform transform hover:scale-105 hover:shadow-2xl"
-                    >
-                    <h4 className="text-2xl font-extrabold text-white mb-3 drop-shadow-md">
-                        Pay Cedula
-                    </h4>
-                    <p className="text-indigo-100 mb-6">
-                        Make your cedula payment quickly and securely.
-                    </p>
-                    <a href="/CedulaPayment">
-                        <button
-                            className="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition"
+                    className="bg-[#1F2937] p-6 rounded-xl shadow-lg cursor-pointer transition-transform transform hover:scale-105 hover:shadow-2xl"
                         >
+                        <h4 className="text-2xl font-extrabold text-white mb-3 drop-shadow-md">
+                            Pay Cedula
+                        </h4>
+                        <p className="text-indigo-100 mb-6">
+                            Make your cedula payment quickly and securely.
+                        </p>
+                        <a href="/CedulaPayment">
+                            <button
+                            className="bg-white  font-semibold px-6 py-3 rounded-full shadow-md hover:bg-indigo-100 transition"
+                            >
                             Pay Now
-                        </button>
-                    </a>
+                            </button>
+                        </a>
                 </div>
               
             </div>

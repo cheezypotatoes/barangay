@@ -10,7 +10,7 @@ export default function PayCedulaStatus() {
   const billAmount = ((pension * 12) / 1000) + 5;
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr bg-[#1DA1F2] flex flex-col items-center justify-start p-4">
+    <div className="min-h-screen bg-gradient-to-tr bg-[#1F2937] flex flex-col items-center justify-start p-4">
       <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center mb-10">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">
           Annual Cedula Bill
@@ -19,14 +19,14 @@ export default function PayCedulaStatus() {
         <div className="space-y-4 mb-6">
           <div>
             <p className="text-gray-600 text-lg">Total Bill</p>
-            <p className="text-2xl font-semibold text-[#1DA1F2]">
+            <p className="text-2xl font-semibold text-[#1F2937]">
               ₱{billAmount.toFixed(2)}
             </p>
           </div>
 
           <div>
             <p className="text-gray-600 text-lg">Total Paid</p>
-            <p className="text-2xl font-semibold text-green-600">
+            <p className="text-2xl font-semibold text-[#1F2937]">
               ₱{totalPayments.toFixed(2)}
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function PayCedulaStatus() {
 
         <a href="/CedulaPaymentForm">
           <button
-            className="bg-[#1DA1F2] hover:bg-blue-700 text-white py-3 px-6 rounded-full font-medium transition shadow-md hover:shadow-lg"
+            className="bg-[#1F2937] hover:bg-blue-800  text-white py-3 px-6 rounded-full font-medium transition shadow-md hover:shadow-lg"
           >
             Pay Cedula
           </button>

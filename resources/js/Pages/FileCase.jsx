@@ -31,7 +31,7 @@ export default function BarangayComplaintInbox() {
       <div className="flex-1 flex overflow-hidden bg-white shadow-lg rounded-none">
 
         {/* Sidebar */}
-        <aside className="w-64 bg-gray-900 text-gray-200 flex flex-col">
+        <aside className="w-64 bg-[#1F2937] text-gray-200 flex flex-col">
           <h2 className="text-xl font-bold p-6 border-b border-gray-700">Folders</h2>
           <nav className="flex flex-col p-4 space-y-3 flex-grow overflow-auto">
             <div
@@ -76,7 +76,7 @@ export default function BarangayComplaintInbox() {
           <header className="h-16 flex items-center justify-between px-8 border-b border-gray-300">
             <h1 className="text-2xl font-semibold text-gray-800">Inbox</h1>
             <button
-              className="bg-blue-600 text-white px-4 py-2 rounded"
+              className="bg-[#1F2937] text-white px-4 py-2 rounded"
               onClick={() => router.visit('/FileCaseRequest')}
             >
               New Complaint
