@@ -5,6 +5,7 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Organizations;
+use App\Models\Residents;
 
 class OrganizationManagerController extends Controller
 {
@@ -14,12 +15,18 @@ class OrganizationManagerController extends Controller
         $UserRow = User::where('id', auth()->id())->first()->makeVisible('is_admin')->toArray();
         $organizationData = Organizations::all()->toArray();
         $userData = User::all()->toArray();
+
+        $residentData = Residents::selectRaw("user_id, CONCAT(first_name, ' ', last_name) as full_name")
+            ->get()
+            ->toArray();
+
         return $UserRow['is_admin'] == 0 ? 
             redirect('/dashboard') : 
-          
+
             Inertia::render('OrganizationManager', [
                 "organizationData" => $organizationData,
                 "userData" => $userData,
+                "residentData" => $residentData,
             ]);
     }
 

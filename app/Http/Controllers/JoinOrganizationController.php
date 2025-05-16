@@ -24,23 +24,26 @@ class JoinOrganizationController extends Controller
     {
 
         $userId = Auth::id();
-        $organizationUserWantsTOJoin = $request->toArray()['organizationSelected'];
+    $organizationName = $request->input('organizationSelected');
 
-        $userRow = Organizations::where('user_id', $userId)
-            ->where('organization_name', $organizationUserWantsTOJoin)
-            ->first();
+    // Check if user already requested or is a member
+    $existing = Organizations::where('user_id', $userId)
+        ->where('organization_name', $organizationName)
+        ->first();
 
-        if (!$userRow) {
-     
-            Organizations::create([
-                'organization_name' => $organizationUserWantsTOJoin,
-                'user_id' => $userId,
-                'status' => 'pending',
-                ]
-            );
-            return back()->with('success', 'Successfully requested to join organization.');
-        }
+    if ($existing) {
+        return back()->withErrors([
+            'error' => 'You have already requested to join or are a member.',
+        ]);
+    }
 
-        return back()->withErrors('error', 'You have already requested to join or are a member.');      
+    // Create join request
+    Organizations::create([
+        'organization_name' => $organizationName,
+        'user_id' => $userId,
+        'status' => 'pending',
+    ]);
+
+    return redirect('/organizationManager');
     }
 }

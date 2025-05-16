@@ -8,6 +8,8 @@ export default function JoinOrganization() {
             organizationSelected: '',
     });
 
+
+    const warningText = useRef(null)
     const organizations = [
         "women's",
         "pwd",
@@ -18,12 +20,15 @@ export default function JoinOrganization() {
         data['organizationSelected'] = selectedOrg;
         if (data['organizationSelected']) {
             post('/JoinOrganization', {
-                onSuccess: () => {
+                onSuccess: (success) => {
+                    setWarning("Successfully requested")
                     reset('organizationSelected');
-                    console.log("SUCCESS")
+                    warningText.current.classList.remove('text-red-700');
+                    warningText.current.classList.add('text-green-700');
                 },
                 onError: (errors) => {
-                    console.log(errors);
+                    warningText.current.classList.remove('text-green-700');
+                    warningText.current.classList.add('text-red-700');
                     setWarning("You already requested this organization.")
                 },
             });
@@ -49,24 +54,16 @@ export default function JoinOrganization() {
 
             <button
             onClick={handleConfirm}
-            className="w-full p-3 rounded-lg font-medium text-white bg-blue-600 hover:bg-blue-700 transition"
+            className="w-full p-3 rounded-lg font-medium text-white bg-[#1F2937] hover:bg-blue-800 transition"
             >
             Confirm
             </button>
             
             {selectedOrg && (
-                <p className="text-red-700">
+                <p ref={warningText} className="text-red-700">
                     {warning}
                 </p>
             )}
-
-            {selectedOrg && (
-            <p className="text-gray-700">
-                ✅ You picked: <strong>{selectedOrg}</strong>
-            </p>
-            )}
-
-            
         </div>
 
         
