@@ -17,23 +17,39 @@ export default function Dashboard() {
             <h2 className="text-2xl font-bold mb-6">Barangay Profiling</h2>
             <ul>
                
-                {alreadyRegistered ? (
-                    <a href="/editProfile">
-                        <li className="py-2 hover:bg-blue-800 rounded cursor-pointer font-bold">
-                        Edit Profile
-                        </li>
-                    </a>
-                    ) : (
-                    <a href="/registerAsResident">
-                        <li className="py-2 hover:bg-blue-800 rounded cursor-pointer font-bold">
-                        Register As Resident
-                        </li>
-                    </a>
-                )}
 
-                 <a href="/JoinOrganization"><li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">Join Organization</li></a>
-                <a href="/FileCase"><li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">File a Barangay Complaint Meeting</li></a>
-                
+                {!isAdmin && (
+                        <>
+                            {alreadyRegistered ? (
+                            <a href="/editProfile">
+                                <li className="py-2 hover:bg-blue-800 rounded cursor-pointer font-bold">
+                                Edit Profile
+                                </li>
+                            </a>
+                            ) : (
+                            <a href="/registerAsResident">
+                                <li className="py-2 hover:bg-blue-800 rounded cursor-pointer font-bold">
+                                Register As Resident
+                                </li>
+                            </a>
+                            )}
+
+                            <a href="/JoinOrganization">
+                            <li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">
+                                Join Organization
+                            </li>
+                            </a>
+
+                            <a href="/FileCase">
+                            <li className="font-bold py-2 hover:bg-blue-800 rounded cursor-pointer">
+                                File a Barangay Complaint Meeting
+                            </li>
+                            </a>
+                        </>
+                        )}
+
+
+
                 {isAdmin && (
                     <>
                         <a href="/viewResidents">
@@ -108,11 +124,7 @@ export default function Dashboard() {
               
             </div>
 
-            {/* Additional Information */}
-            <div className="mt-6 bg-white p-6 rounded-lg shadow-md">
-                <h4 className="text-xl font-semibold mb-4">Barangay Information</h4>
-                <p className="text-gray-700">This section can be used to display other information such as recent updates, news, and announcements.</p>
-            </div>
+            
         </div>
     </div>
     );
